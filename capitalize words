@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <ctype.h>
+/*Question 4: Capitalize Words
+
+Write a program that accepts a string as input, capitalizes the first letter of each word in the 
+
+string, and then returns the result string.
+
+Examples: 
+
+"hi"=> returns "Hi"
+
+"i love programming"=> returns "I Love Programming"
+*/
+#include <stdio.h>
+#include <ctype.h>
+
+void capitalize_words(char *s) {
+    int capitalize = 1;
+    while (*s) {
+        if (isspace(*s)) {
+            capitalize = 1;
+        } else {
+            if (capitalize) {
+                *s = toupper(*s);
+                capitalize = 0;
+            }
+        }
+        s++;
+    }
+}
+
+int main() {
+    char sentence[100];
+    printf("Enter a sentence: ");
+    fgets(sentence, sizeof(sentence), stdin);
+    capitalize_words(sentence);
+    printf("Capitalized sentence: %s\n", sentence);
+    return 0;
+}
