@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdbool.h>
+/*Question 3: Power of Two
+
+Write a program that takes an integer as input and returns true if the input is a power of two.
+Examples: 
+
+8=> returns true
+
+6=> returns false
+*/
+bool is_power_of_two(int n) 
+{
+	if(n <= 0)
+	{
+		return false;
+	}
+    return(n & (n - 1)) == 0;
+}
+
+int main() {
+	int num;
+	printf("Enter an integer: ");
+	scanf("%d", &num);
+	
+	if(is_power_of_two(num))
+	{
+    printf("%d (true)\n", is_power_of_two(num));  // returns 1 (true)
+	}
+	else
+    printf("%d (false)\n", is_power_of_two(num));  // returns 0 (false)
+    return 0;
+}
