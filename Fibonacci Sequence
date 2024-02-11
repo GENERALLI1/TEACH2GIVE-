@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include<stdlib.h>
+/*Question 2: Fibonacci Sequence
+
+Write a program to generate the Fibonacci sequence up to 100.
+*/
+int main() {
+    int a = 0, b = 1, temp;
+    while (a <= 100) {
+        printf("%d ", a);
+        temp = a;
+        a = b;
+        b = temp + b;
+    }
+    return 0;
+}
